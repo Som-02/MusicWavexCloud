@@ -15,8 +15,7 @@ A full-stack music streaming web application that lets users browse songs and al
 - [Environment Variables](#environment-variables)
 - [Running Locally](#running-locally)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+- [Contributing](#contributing)+
 
 ---
 
