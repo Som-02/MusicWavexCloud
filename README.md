@@ -1,8 +1,8 @@
-# 🎵 MusicWavexCloud
+# 🎵 MusicWave x Cloud
 
-A full-stack music streaming web application featuring curated artist pages, album browsing, and a built-in audio player — inspired by Spotify. Built with vanilla HTML/CSS/JS on the frontend and Node.js + Express + MongoDB on the backend, deployed on Vercel.
+A full-stack music streaming web application that lets users browse songs and albums by artist, manage playlists, and enjoy a seamless listening experience — powered by a Node.js backend and deployed across Netlify and Render.
 
-**Live Demo →** [music-wavex-cloud.vercel.app](https://music-wavex-cloud.vercel.app)
+**🌐 Live Demo →** [music-wavex-cloud.vercel.app](https://music-wavex-cloud.vercel.app)
 
 ---
 
@@ -22,26 +22,25 @@ A full-stack music streaming web application featuring curated artist pages, alb
 
 ## ✨ Features
 
-- 🎤 **Artist Pages** — Dedicated pages for artists including Arijit Singh, Diljit Dosanjh, Shreya Ghoshal, Sonu Nigam, Anuv Jain, Adele, Ed Sheeran, Shawn Mendes, Zayn, and more
-- 🎬 **Album & Playlist Pages** — Browse albums and playlists with a clean card-based UI
-- ▶️ **Audio Player** — Play songs directly in the browser with a persistent bottom player bar
-- 🎞️ **Movie Soundtracks** — Curated pages for popular Bollywood films (Jawan, Rockstar, Shershaah, YJHD, Bhool Bhulaiyaa, and more)
-- 🔐 **User Authentication** — Login page with form handling
+- 🎧 **Music Player** — Play songs directly in the browser with a built-in audio player
+- 🎤 **Artist Pages** — Dedicated pages for artists including Arijit Singh, Adele, Ed Sheeran, Diljit Dosanjh, Shreya Ghoshal, Sonu Nigam, Shaan, Zayn, and more
+- 💿 **Album Pages** — Browse albums by movie/collection (Jawan, Shershaah, Rockstar, YJHD, Veer-Zaara, etc.)
+- 📋 **Playlist Management** — Create and manage personal playlists
+- 🔐 **User Authentication** — Login/signup functionality with session handling
 - 📬 **Contact Page** — User-facing contact form
-- 📱 **Responsive Design** — Works across desktop and mobile viewports
+- ☁️ **Cloud Deployed** — Frontend on Netlify, backend API on Render
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer       | Technology                              |
-|-------------|-----------------------------------------|
-| Frontend    | HTML5, CSS3, Vanilla JavaScript         |
-| Backend     | Node.js, Express.js                     |
-| Database    | MongoDB (via Mongoose)                  |
-| Environment | dotenv                                  |
-| CORS        | cors middleware                         |
-| Hosting     | Vercel                                  |
+| Layer      | Technology                              |
+|------------|-----------------------------------------|
+| Frontend   | HTML5, CSS3, Vanilla JavaScript         |
+| Backend    | Node.js, Express.js (ES Modules)        |
+| Database   | MongoDB (via Mongoose)                  |
+| Auth/Misc  | CORS, dotenv                            |
+| Hosting    | Netlify (frontend), Render (backend)    |
 
 ---
 
@@ -49,42 +48,42 @@ A full-stack music streaming web application featuring curated artist pages, alb
 
 ```
 MusicWavexCloud/
-├── songs/                  # Audio files (.mp3)
-├── album/                  # Album cover images
-├── index.html              # Home / landing page
-├── playlist.html           # Playlist browser
-├── newlogin.html           # Login page
-├── contactus.html          # Contact page
+├── songs/               # Audio files
+├── album/               # Album art and assets
+├── index.html           # Home / landing page
+├── newlogin.html        # Login & signup page
+├── playlist.html        # Playlist management page
+├── showall.html         # Browse all songs
+├── contactus.html       # Contact form page
 │
-├── # Artist Pages
-├── arijitsingh.html
-├── shreyaghoshal.html
-├── sonunigam.html
-├── diljit.html
-├── anuv.html
-├── shaan.html
+├── arijitsingh.html     # Artist pages
 ├── adele.html
 ├── edsheeran.html
-├── shawn.html
+├── diljit.html
+├── shreyaghoshal.html
+├── sonunigam.html
+├── shaan.html
 ├── zayn.html
+├── shawn.html
+├── anuv.html
 │
-├── # Movie / Album Pages
-├── rockstar.html
+├── jawan.html           # Album / movie soundtrack pages
 ├── shershaah.html
-├── jawan.html
+├── rockstar.html
 ├── yjhd.html
-├── bhoolbhulaiya.html
-├── jabwemet.html
-├── okjaanu.html
 ├── veerzara.html
+├── okjaanu.html
+├── jabwemet.html
+├── bhoolbhulaiya.html
 ├── ghajini.html
 ├── adhm.html
 │
-├── data.js / data2.js      # Song metadata (title, src, cover)
-├── wave.css                # Main stylesheet
-├── server.js               # Express backend entry point
+├── wave.css             # Main stylesheet
+├── data.js              # Song/artist data
+├── data2.js             # Additional data
+├── server.js            # Express backend entry point
 ├── package.json
-└── .env                    # Environment variables (not committed)
+└── .env                 # Environment variables (not committed)
 ```
 
 ---
@@ -95,7 +94,7 @@ MusicWavexCloud/
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [npm](https://www.npmjs.com/)
-- A [MongoDB](https://www.mongodb.com/) instance (local or Atlas)
+- A [MongoDB](https://www.mongodb.com/) database (MongoDB Atlas recommended)
 
 ### Clone the Repository
 
@@ -112,41 +111,52 @@ Create a `.env` file in the root directory:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
-PORT=3000
+PORT=5000
 ```
 
-> ⚠️ Never commit your `.env` file. Add it to `.gitignore` if not already present.
+> ⚠️ Never commit your `.env` file. Keep it in `.gitignore`.
 
 ---
 
 ## 🏃 Running Locally
 
-```bash
-# Install dependencies
-npm install
+### Install dependencies and start the backend
 
-# Start the backend server
+```bash
+npm install
 npm start
 ```
 
-The server will run at `http://localhost:3000`.
+The Express server will start at `http://localhost:5000`.
 
-Open `index.html` directly in your browser, or serve it with a static server:
+### Open the frontend
 
-```bash
-npx serve .
-```
+Since the frontend is plain HTML, just open `index.html` directly in your browser, or use a local server like [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VS Code.
+
+> Make sure to update any API URLs in your JS files to point to `http://localhost:5000` when running locally.
 
 ---
 
 ## ☁️ Deployment
 
-The app is deployed on **Vercel**. To deploy your own fork:
+This project uses a split deployment setup:
+
+### Frontend — Netlify
 
 1. Push your code to GitHub
-2. Import the repository on [vercel.com](https://vercel.com)
-3. Set environment variables (`MONGO_URI`, `PORT`) in the Vercel dashboard
-4. Deploy — Vercel will auto-detect the static files and `server.js`
+2. Connect the repository on [netlify.com](https://app.netlify.com)
+3. Set the **publish directory** to `/` (root, since it's plain HTML)
+4. Deploy — Netlify will serve your HTML/CSS/JS files globally via CDN
+
+### Backend — Render
+
+1. Connect the repository on [render.com](https://render.com)
+2. Create a new **Web Service**
+3. Set the **start command** to `npm start`
+4. Add your environment variables (`MONGO_URI`, `PORT`) under the Environment tab
+5. Deploy — Render will host your Express + MongoDB API
+
+> 💡 After deploying the backend, update your frontend's API base URL to point to your Render service URL (e.g. `https://your-app.onrender.com`).
 
 ---
 
@@ -163,5 +173,5 @@ Contributions are welcome! To get started:
 ---
 
 <div align="center">
-  Made with 🎧 by <a href="https://github.com/Som-02">Somnath</a>
+  Made with 🎶 by <a href="https://github.com/Som-02">Somnath</a>
 </div>
