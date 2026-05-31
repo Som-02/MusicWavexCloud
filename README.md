@@ -2,7 +2,7 @@
 
 A full-stack music streaming web application that lets users browse songs and albums by artist, manage playlists, and enjoy a seamless listening experience — powered by a Node.js backend and deployed across Netlify and Render.
 
-**🌐 Live Demo →** [musicxsomxwave.netlify.app/](https://music-wavex-cloud-f2ct.vercel.app/))
+**🌐 Live Demo →** [musicxsomxwave.vercel.app/](https://music-wavex-cloud-f2ct.vercel.app/))
 
 ---
 
